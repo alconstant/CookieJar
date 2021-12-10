@@ -184,14 +184,20 @@ Note that each one of these is a cookie that was granted to Ryan after logging i
 #### Step 4: Log in Using Cookies
 
 1. Craft a new `curl` command that now uses the `--cookie` option, followed by the path to your cookies file. For the URL, use `http://localhost:8080/wp-admin/index.php`.
+
+
 `curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/index.php`   
 
 - **Question:** Is it obvious that we can access the Dashboard? (Y/N)
    - NO
 
 2. Press the up arrow on your keyboard to run the same command, but this time, pipe `| grep Dashboard` to the end of your command to return all instances of the word `Dashboard` on the page.
+
+
 `curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/index.php | grep Dashboard`   
-    - **Question:**  Look through the output where `Dashboard` is highlighted. Does any of the wording on this page seem familiar? (Y/N) If so, you should be successfully logged in to your Editor's dashboard.
+
+
+   - **Question:**  Look through the output where `Dashboard` is highlighted. Does any of the wording on this page seem familiar? (Y/N) If so, you should be successfully logged in to your Editor's dashboard.
     - Yes .php 
 
 #### Step 5: Test the Users.php Page
@@ -199,7 +205,8 @@ Note that each one of these is a cookie that was granted to Ryan after logging i
 1. Finally, write a `curl` command using the same `--cookie ryancookies.txt` option, but attempt to access `http://localhost:8080/wp-admin/users.php`.
 
 `curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/users.php`
-    - **Question:** What happens this time?
+
+   - **Question:** What happens this time?
     - Another failed attempt at access
     
    ![](Images/TestUsers.phpWK14.png)
