@@ -131,6 +131,8 @@ Create two new users: Amanda and Ryan.
     - Username: `Amanda`
     - Password: `password`
 
+![Ryan And Amanda](Images/Step1SetUpWK14.png)
+
 #### Step 2: Baselining
 
 For these "baselining" steps, you'll want to log into two different types of accounts to see how the WordPress site looks at the `localhost:8080/wp-admin/users.php` page.  We want to see how the Users page looks from the perspective of an administrator, vs. a regular user.
@@ -142,10 +144,14 @@ For these "baselining" steps, you'll want to log into two different types of acc
 2. Using your browser, log into your Ryan account and attempt to navigate to `localhost:8080/wp-admin/index.php`. Note the wording on your Dashboard.
 
 - There is no Site Health Status in Ryan's view.
+![](Images/RyanViewBaselineWK14.png)
 
 3. Attempt to navigate to `localhost:8080/wp-admin/users.php`. Note what you see now.
 
 - A message with "You need a higher level of permision" appears on the screen.
+
+![](Images/Step2BaseliningWK14.png)
+
 
 Log out in the browser.
 
@@ -178,15 +184,21 @@ Note that each one of these is a cookie that was granted to Ryan after logging i
 #### Step 4: Log in Using Cookies
 
 1. Craft a new `curl` command that now uses the `--cookie` option, followed by the path to your cookies file. For the URL, use `http://localhost:8080/wp-admin/index.php`.
+`curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/index.php`   
 
-   - **Question:** Is it obvious that we can access the Dashboard? (Y/N)
+- **Question:** Is it obvious that we can access the Dashboard? (Y/N)
+   - NO
 
 2. Press the up arrow on your keyboard to run the same command, but this time, pipe `| grep Dashboard` to the end of your command to return all instances of the word `Dashboard` on the page.
-
+`curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/index.php | grep Dashboard`   
     - **Question:**  Look through the output where `Dashboard` is highlighted. Does any of the wording on this page seem familiar? (Y/N) If so, you should be successfully logged in to your Editor's dashboard.
+    - Yes .php 
 
 #### Step 5: Test the Users.php Page
 
 1. Finally, write a `curl` command using the same `--cookie ryancookies.txt` option, but attempt to access `http://localhost:8080/wp-admin/users.php`.
 
+`curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/users.php`
     - **Question:** What happens this time?
+    - Another failed attempt at access
+    ![](Images/TestUser.phpWK14.png)
