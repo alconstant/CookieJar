@@ -131,7 +131,7 @@ Create two new users: Amanda and Ryan.
     - Username: `Amanda`
     - Password: `password`
 
-![Ryan And Amanda](Images/Step1SetUpWK14.png)
+![Ryan And Amanda](Images/Step1SetUPWK14.png)
 
 #### Step 2: Baselining
 
@@ -201,4 +201,4 @@ Note that each one of these is a cookie that was granted to Ryan after logging i
 `curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/users.php`
     - **Question:** What happens this time?
     - Another failed attempt at access
-    ![](Images/TestUser.phpWK14.png)
+    ![](Images/TestUsers.phpWK14.png)
