@@ -201,4 +201,5 @@ Note that each one of these is a cookie that was granted to Ryan after logging i
 `curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/users.php`
     - **Question:** What happens this time?
     - Another failed attempt at access
+    
     ![](Images/TestUsers.phpWK14.png)
