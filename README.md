@@ -170,6 +170,8 @@ curl --cookiejar ./ryancookies.txt --form "log=Ryan" --form "pwd=123456" `http:/
 3. Read the contents of the `ryancookies.txt` file.
 
    - **Question:** How many items exist in this file?
+   - Three
+![ryancookies.txt]Images/ryancookies.txt.png
 
 Note that each one of these is a cookie that was granted to Ryan after logging in.
 
